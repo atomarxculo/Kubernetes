@@ -1,0 +1,21 @@
+# Para crear un pod (unidad básica)
+kubectl run <nombre_pod> --image=<nombre de la imagen a utilizar>
+
+Si despues del comando añadimos "-o wide", nos mostrará más información
+
+# Mostrar caracteristicas de un pod
+kubectl describe pod <nombre_pod>
+
+# Ejecutar comandos en un pod (Obsoleto)
+kubectl exec <nombre_pod> <comando>
+# Conectarnos a la consola del pod
+kubectl exec -ti <nombre_pod> bash
+
+# Comprobar los logs de un pod
+kubectl logs <nombre_pod>
+
+# Genera un proxy para poder conectarnos a las APIs que tiene Kubernetes
+kubectl proxy
+# Ruta para acceder a los pods desde el proxy (cuando no hemos levantado servicios)
+http://127.0.0.1:8001/api/v1/namespaces/default/pods/nginx1/proxy/
+
