@@ -1,1 +1,2 @@
 # Crear pod mediante un manifest YAML
+kubectl create -f <nombre_yml>
